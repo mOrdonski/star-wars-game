@@ -48,3 +48,28 @@ export const starship = {
     __v: 0,
   },
 };
+
+export const species = {
+  result: {
+    properties: {
+      classification: 'amphibian',
+      designation: 'sentient',
+      average_height: '160',
+      average_lifespan: 'unknown',
+      hair_colors: 'none',
+      skin_colors: 'red, blue, brown, magenta',
+      eye_colors: 'yellow',
+      homeworld: 'https://www.swapi.tech/api/planets/8',
+      language: 'Mon Calamarian',
+      people: ['https://www.swapi.tech/api/people/27'],
+      created: '2024-02-18T00:06:20.429Z',
+      edited: '2024-02-18T00:06:20.429Z',
+      name: 'Mon Calamari',
+      url: 'https://www.swapi.tech/api/species/8',
+    },
+    description: 'A sepcies within the Star Wars universe',
+    _id: '5f63a135cf50d100047f976f',
+    uid: '8',
+    __v: 0,
+  },
+};
