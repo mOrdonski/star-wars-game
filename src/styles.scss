@@ -1,4 +1,12 @@
 @import "../node_modules/@ng-select/ng-select/themes/default.theme.css";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url('https://compass-ssl.xboxlive.com/assets/67/1c/671c739e-386a-4df3-9774-30e9e46eb53a.jpg?n=MSXC-StarWarsTitle-HeroAndImageCard-large-l-794x447-16x9-01.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  margin:20px;
+}
