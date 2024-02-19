@@ -73,3 +73,26 @@ export const species = {
     __v: 0,
   },
 };
+
+export const planet = {
+  result: {
+    properties: {
+      diameter: '13800',
+      rotation_period: '28',
+      orbital_period: '412',
+      gravity: '1',
+      population: '5000000000',
+      climate: 'temperate',
+      terrain: 'plains, forests, hills, mountains',
+      surface_water: '25',
+      created: '2024-02-18T00:06:20.426Z',
+      edited: '2024-02-18T00:06:20.426Z',
+      name: 'Muunilinst',
+      url: 'https://www.swapi.tech/api/planets/57',
+    },
+    description: 'A planet.',
+    _id: '5f7254c11b7dfa00041c6fe6',
+    uid: '57',
+    __v: 0,
+  },
+};

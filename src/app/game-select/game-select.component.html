@@ -9,9 +9,11 @@
   </mat-tab>
 
   <mat-tab label="Species" #species>
+    <app-species *ngIf="species.isActive" />
   </mat-tab>
 
   <mat-tab label="Planets" #planets>
+    <app-planet *ngIf="planets.isActive" />
   </mat-tab>
 
 </mat-tab-group>
