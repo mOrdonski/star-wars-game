@@ -5,6 +5,7 @@
   </mat-tab>
 
   <mat-tab label="Starships" #starships>
+    <app-starship *ngIf="starships.isActive" />
   </mat-tab>
 
   <mat-tab label="Species" #species>

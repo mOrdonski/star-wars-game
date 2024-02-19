@@ -1,0 +1,16 @@
+<mat-card *ngIf="starship" class="card">
+
+  <mat-card-header>
+    <mat-card-title>{{starship.result?.properties?.name}}</mat-card-title>
+    <mat-card-subtitle>{{starship.result?.properties?.model}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Cost(credits): {{starship.result?.properties?.cost_in_credits}}</p>
+    <p>Crew: {{starship.result?.properties?.crew}}</p>
+    <p>Length: {{starship.result?.properties?.length}}</p>
+    <p>Passengers: {{starship.result?.properties?.passengers}}</p>
+    <p>Hyperdrive rating: {{starship.result?.properties?.hyperdrive_rating}}</p>
+  </mat-card-content>
+
+</mat-card>

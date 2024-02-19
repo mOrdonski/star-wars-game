@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CardsQuantity } from '../cards-quantity.enum.';
 import { config } from '../config';
 import { StarWarsPeople } from '../interfaces/star-wars-people';
+import { StarWarsStarship } from '../interfaces/star-wars-starship';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +18,14 @@ export class StarWarsService {
 
     return this.http.get<Partial<StarWarsPeople>>(
       `${config.SWApiUrl}people/${randomNumber}`
+    );
+  }
+
+  getRandomStarship(): Observable<Partial<StarWarsStarship>> {
+    const randomNumber = this.getRandomNumber(CardsQuantity.starships);
+
+    return this.http.get<Partial<StarWarsStarship>>(
+      `${config.SWApiUrl}starships/${randomNumber}`
     );
   }
 
