@@ -1,0 +1,25 @@
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+
+}
+
+:host{
+  height: 100%
+}
+
+mat-tab-group {
+ height: 100% !important;
+}
+
+::ng-deep .mat-mdc-tab-body-wrapper {
+  height: 100% !important;
+
+  ng-select {
+    min-width:200px;
+    width:15%;
+  }
+}

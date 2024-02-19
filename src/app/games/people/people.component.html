@@ -1,0 +1,26 @@
+<div class="button-container">
+  <ng-select [items]="selectOptions" bindLabel="label" bindValue="value" [(ngModel)]="selectedGameResource" />
+  <button mat-raised-button color="accent" type="button" (click)="play()">Play</button>
+  <button mat-raised-button color="warn" type="button" (click)="resetScore()">Reset score</button>
+</div>
+
+<div class="score">
+  <p *ngIf="leftScore() !== 0 || rightScore() !== 0">{{ leftScore() }} : {{ rightScore() }}</p>
+</div>
+
+<div class="cards-container" *ngIf="twoRandomPeoples$ | async as twoRandomPeoples">
+  <app-people-card *ngIf="twoRandomPeoples.leftCard.message === 'ok'; else errorCard" [ngClass]="{
+      winner: winner() === 'left',
+      loser: winner() === 'right'
+    }" [people]="twoRandomPeoples.leftCard" />
+
+  <app-people-card *ngIf="twoRandomPeoples.rightCard.message === 'ok'; else errorCard" [ngClass]="{
+      winner: winner() === 'right',
+      loser: winner() === 'left'
+    }" [people]="twoRandomPeoples.rightCard" />
+
+  <ng-template #errorCard>
+    <app-error-card />
+  </ng-template>
+
+</div>
