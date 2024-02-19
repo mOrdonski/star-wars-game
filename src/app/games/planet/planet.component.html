@@ -1,0 +1,30 @@
+<div class="button-container">
+  <ng-select [items]="selectOptions" bindLabel="label" bindValue="value" [(ngModel)]="selectedGameResource" />
+  <button mat-raised-button color="accent" type="button" (click)="play()">Play</button>
+  <button mat-raised-button color="warn" type="button" (click)="resetScore()">Reset score</button>
+</div>
+
+<div class="score">
+  <p *ngIf="leftScore() !== 0 || rightScore() !== 0">{{ leftScore() }} : {{ rightScore() }}</p>
+</div>
+
+<div class="cards-container" *ngIf="twoRandomPlanets$ | async as twoRandomPlanets">
+  <app-planet-card *ngIf="twoRandomPlanets.leftCard.message === 'ok'; else leftCardError" [ngClass]="{
+      'winner': winner() === 'left',
+      'loser': winner() === 'right'
+      }" [planet]="twoRandomPlanets.leftCard" />
+
+  <ng-template #leftCardError>
+    <app-error-card />
+  </ng-template>
+
+  <app-planet-card *ngIf="twoRandomPlanets.rightCard.message === 'ok'; else leftCardError" [ngClass]="{
+      'winner': winner() === 'right',
+      'loser': winner() === 'left'
+      }" [planet]="twoRandomPlanets.rightCard" />
+
+  <ng-template #rightCardError>
+    <app-error-card />
+  </ng-template>
+
+</div>

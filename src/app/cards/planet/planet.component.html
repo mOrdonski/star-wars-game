@@ -1,0 +1,16 @@
+<mat-card *ngIf="planet" class="card">
+
+  <mat-card-header>
+    <mat-card-title>{{planet.result?.properties?.name}}</mat-card-title>
+    <mat-card-subtitle>{{planet.result?.properties?.terrain}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Diameter: {{planet.result?.properties?.diameter}}</p>
+    <p>Rotation period: {{planet.result?.properties?.rotation_period}}</p>
+    <p>Orbital period: {{planet.result?.properties?.orbital_period}}</p>
+    <p>Gravity: {{planet.result?.properties?.gravity}}</p>
+    <p>Population: {{planet.result?.properties?.population}}</p>
+  </mat-card-content>
+
+</mat-card>

@@ -36,4 +36,26 @@ export const config = {
       label: 'Average lifespan',
     },
   ],
+  planetOptions: [
+    {
+      value: 'diameter',
+      label: 'Diameter',
+    },
+    {
+      value: 'rotation_period',
+      label: 'Rotation period',
+    },
+    {
+      value: 'orbital_period',
+      label: 'Orbital period',
+    },
+    {
+      value: 'gravity',
+      label: 'Gravity',
+    },
+    {
+      value: 'population',
+      label: 'Population',
+    },
+  ],
 };
