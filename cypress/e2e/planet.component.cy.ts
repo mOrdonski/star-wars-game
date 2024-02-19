@@ -4,7 +4,7 @@ describe('PeopleComponent', () => {
     cy.get('span').contains('Planets').click();
   });
 
-  it('should display two random people cards when Play button is clicked', () => {
+  it('should display two random planet cards when Play button is clicked', () => {
     cy.get('button').contains('Play').click();
     cy.get('.cards-container').should('be.visible');
   });
