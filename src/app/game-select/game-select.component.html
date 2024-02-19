@@ -1,6 +1,7 @@
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
 
   <mat-tab label="Peoples" #peoples>
+    <app-people *ngIf="peoples.isActive" />
   </mat-tab>
 
   <mat-tab label="Starships" #starships>
