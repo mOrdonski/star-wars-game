@@ -26,4 +26,14 @@ export const config = {
       label: 'Hyperdrive rating',
     },
   ],
+  speciesOptions: [
+    {
+      value: 'average_height',
+      label: 'Average height',
+    },
+    {
+      value: 'average_lifespan',
+      label: 'Average lifespan',
+    },
+  ],
 };

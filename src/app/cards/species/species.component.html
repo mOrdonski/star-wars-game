@@ -1,0 +1,15 @@
+<mat-card *ngIf="species" class="card">
+
+  <mat-card-header>
+    <mat-card-title>{{species.result?.properties?.name}}</mat-card-title>
+    <mat-card-subtitle>{{species.result?.properties?.classification}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Average height: {{species.result?.properties?.average_height}}</p>
+    <p>Average lifespan: {{species.result?.properties?.average_lifespan}}</p>
+    <p>Designation: {{species.result?.properties?.designation}}</p>
+    <p>Language: {{species.result?.properties?.language}}</p>
+  </mat-card-content>
+
+</mat-card>
