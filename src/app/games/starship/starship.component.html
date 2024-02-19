@@ -1,7 +1,8 @@
 <div class="button-container">
   <ng-select [items]="selectOptions" bindLabel="label" bindValue="value" [(ngModel)]="selectedGameResource" />
   <button mat-raised-button color="accent" type="button" (click)="play()">Play</button>
-  <button mat-raised-button color="warn" type="button" (click)="resetScore()">Reset score</button>
+  <button mat-raised-button color="warn" type="button" [disabled]="leftScore() === 0 && rightScore() === 0"
+    (click)="resetScore()">Reset score</button>
 </div>
 
 <div class="score">
