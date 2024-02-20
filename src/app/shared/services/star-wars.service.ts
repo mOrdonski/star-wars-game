@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { CardsQuantity } from '../cards-quantity.enum.';
+import { CardsQuantity } from '../cards-quantity.enum';
 import { config } from '../config';
 import { StarWarsPeople } from '../interfaces/star-wars-people';
 import { StarWarsPlanet } from '../interfaces/star-wars-planet';
