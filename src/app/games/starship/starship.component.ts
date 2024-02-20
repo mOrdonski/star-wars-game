@@ -12,6 +12,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { catchError, forkJoin, Observable, of, tap } from 'rxjs';
 
 import { ErrorCardComponent } from '../../cards/error/error.component';
+import { LoadingCardComponent } from '../../cards/loading/loading.component';
 import { StarshipCardComponent } from '../../cards/starship/starship.component';
 import { config } from '../../shared/config';
 import { Game } from '../../shared/interfaces/game.gateway';
@@ -25,6 +26,7 @@ import { getResult } from '../../shared/utils/get-result';
   imports: [
     CommonModule,
     StarshipCardComponent,
+    LoadingCardComponent,
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
@@ -52,8 +54,10 @@ export class StarshipComponent implements Game {
   winner: WritableSignal<string> = signal('');
   leftScore: WritableSignal<number> = signal(0);
   rightScore: WritableSignal<number> = signal(0);
+  loading: WritableSignal<boolean> = signal(false);
 
   play(): void {
+    this.loading.set(true);
     this.twoRandomStarships$ = forkJoin({
       leftCard: this.starWarsService
         .getRandomStarship()
@@ -62,7 +66,8 @@ export class StarshipComponent implements Game {
         .getRandomStarship()
         .pipe(catchError((error) => of({}))),
     }).pipe(
-      tap(({ leftCard, rightCard }) => this.countResults(leftCard, rightCard))
+      tap(({ leftCard, rightCard }) => this.countResults(leftCard, rightCard)),
+      tap(() => this.loading.set(false))
     );
   }
 
